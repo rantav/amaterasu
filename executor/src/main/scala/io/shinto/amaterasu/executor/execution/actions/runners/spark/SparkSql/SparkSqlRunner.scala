@@ -1,4 +1,4 @@
-package io.shinto.amaterasu.common.execution.actions.runners.spark
+package io.shinto.amaterasu.executor.execution.actions.runners.spark
 
 import java.io.File
 
@@ -23,8 +23,8 @@ class SparkSqlRunner extends Logging {
   var sqlContext: SQLContext = _
 
   def executeQuery(sparkSqlTempTable: String,
-                    dataSource: String,
-                    query: String) = {
+                   dataSource: String,
+                   query: String) = {
 
     notifier.info(s"================= started action $actionName =================")
     val file: File = new File(dataSource)
